@@ -8,8 +8,8 @@ Game::Game()
 {
 	window->setFramerateLimit(60);
 	font.loadFromFile("Fonts/Dosis-Light.ttf"); // it might fail to load...
-	states.push(new MenuState(font));
-	states.push(new GameplayState(font));
+	states.push(new MenuState(*window, font));
+	//states.push(new GameplayState(*window, font));
 }
 
 
@@ -28,7 +28,7 @@ void Game::render()
 	window->clear();
 	if (states.size() > 0)
 	{
-		states.top()->render(*window);
+		states.top()->render();
 	}
 	window->display();
 }
@@ -41,13 +41,6 @@ void Game::update()
 		states.top()->update(dt);
 	}
 	window->setTitle(std::to_string(1 / dt));
-
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
-	{
-		delete states.top();
-		states.pop();
-	}
-
 }
 
 void Game::poll_events()

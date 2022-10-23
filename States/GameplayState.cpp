@@ -1,8 +1,8 @@
 #include "GameplayState.h"
 
-GameplayState::GameplayState(sf::Font& font)
+GameplayState::GameplayState(sf::RenderWindow& window, sf::Font& font)
 	:
-	State(font)
+	State(window, font)
 {
 	text.setCharacterSize(30);
 	text.setString("Gameplay State running...");
@@ -11,7 +11,7 @@ void GameplayState::update(float dt)
 {
 
 }
-void GameplayState::render(sf::RenderTarget& target)
+void GameplayState::render()
 {
-	target.draw(text);
+	window.draw(text);
 }

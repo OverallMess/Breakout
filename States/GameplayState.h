@@ -4,7 +4,7 @@
 class GameplayState : public State
 {
 public:
-	GameplayState(sf::Font& font);
+	GameplayState(sf::RenderWindow&, sf::Font& font);
 	void update(float dt) override;
-	void render(sf::RenderTarget& target) override;
+	void render() override;
 };

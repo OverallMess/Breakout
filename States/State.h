@@ -4,11 +4,16 @@
 class State
 {
 public:
-	State(sf::Font& font);
-	virtual void update(float dt) = 0;
-	virtual void render(sf::RenderTarget& target) = 0;
+	State(sf::RenderWindow& window, sf::Font& font);
+	virtual ~State() = default;
+	virtual void update(float dt);
+	virtual void render() = 0;
+private:
+	void updateMousePosition();
 protected:
+	sf::RenderWindow& window;
 	sf::Font& font;
 	sf::Text text;
+	sf::Vector2f mousePosView;
 };
 

@@ -134,6 +134,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="GUI\Button.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="States\GameplayState.cpp" />
@@ -142,6 +143,7 @@
     <ClCompile Include="Utils\FrameTimer.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="GUI\Button.h" />
     <ClInclude Include="States\GameplayState.h" />
     <ClInclude Include="States\MenuState.h" />
     <ClInclude Include="Utils\FrameTimer.h" />
